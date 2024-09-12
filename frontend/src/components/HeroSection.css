@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+    #heroSection{
+        
+        margin: 5px;
+        width: 98%;
+        border-radius: 10px;
+        padding-right: 8px !important;
+        height: 200px !important;
+        background: linear-gradient(90deg, #EAF2FF 0%, #96F0D0 100%);
+        padding-bottom: 80px;
+
+    }
+   #animationFile{
+    display: none;
+   }
+   #textHero{
+     width: 400px !important;
+     text-wrap: wrap !important;
+     position: absolute;
+     top: 30px;
+     padding-bottom: 80px !important;
+     margin-left: 10px !important;
+   }
+  }
+  
