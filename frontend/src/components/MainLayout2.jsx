@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from './Header';
 import AboutSelection from './AboutSelection';
 import FeatureSection from './FeatureSection';
-import Footer from './Footer';
 
 const MainLayout2 = () => {
   return (

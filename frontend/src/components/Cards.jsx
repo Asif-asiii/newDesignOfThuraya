@@ -6,7 +6,7 @@ import image3 from "../assets/mobile1.png"; // Second image (mobile)
 const Cards = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-4 z-50" id="cards">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-4" id="cards">
         
         {/* Card 1 */}
         <div className="relative flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md w-full md:max-w-lg p-6 bg-white overflow-hidden" id="card1" style={{height:"250px"}}>
@@ -17,7 +17,7 @@ const Cards = () => {
               <img
                 src={image2}
                 alt="data image"
-                className="w-24 h-24 z-10"
+                className="w-24 h-24 "
                 style={{
                   position: 'absolute',
                   top: '10px',
@@ -29,7 +29,7 @@ const Cards = () => {
               <img
                 src={image3}
                 alt="mobile image"
-                className="w-28 h-auto z-0"
+                className="w-28 h-auto "
                 style={{
                   position: "absolute",
                   bottom: "-60px",

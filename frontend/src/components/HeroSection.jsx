@@ -7,9 +7,9 @@ import Button from "@mui/material/Button";
 const HeroSection = () => {
   return (
     <section
-      className="relative flex items-center bg-gradient-to-r from-cyan-100 to-teal-100 overflow-hidden"
+      className="relative flex items-center bg-gradient-to-r from-cyan-100 to-teal-100 overflow-hidden lg:h-[430px]"
       id="heroSection"
-      style={{ height: "425px" }}
+      
     >
       {/* Right Section - Animation */}
       <div className="absolute top-0 right-0 w-full h-full" id="animationFile">
@@ -37,7 +37,9 @@ const HeroSection = () => {
       >
         <Button
           variant="outlined"
+          
           style={{
+            
             borderRadius: "40px",
             paddingLeft: "5px",
             paddingRight: "5px",

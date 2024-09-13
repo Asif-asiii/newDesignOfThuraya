@@ -4,8 +4,10 @@ import image from "../../assets/thurayalogo.png";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ onScrollToRecharge, onScrollToFAQ }) => {
+const NavBar = ({ onScrollToRecharge, onScrollToFAQ, onLanguageChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState("English");
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -13,6 +15,13 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ }) => {
 
   const closeMenu = () => {
     setIsOpen(false);
+    setShowLanguageMenu(false); // Close language menu when main menu closes
+  };
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    onLanguageChange(lang); // Pass the language change to parent component
+    setShowLanguageMenu(false);
   };
 
   return (
@@ -44,7 +53,7 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ }) => {
           </div>
         )}
 
-        <nav className="flex flex-col space-y-4 mt-20 p-6 lg:space-y-0 lg:mt-0 lg:flex-row lg:space-x-8">
+        <nav className="flex flex-col items-center justify-center space-y-6 mt-20 p-6 lg:space-y-0 lg:mt-0 lg:flex-row lg:space-x-8">
           <Link
             to="/aboutus"
             className="text-[#444444] hover:text-gray-600 lg:inline-block"
@@ -62,17 +71,17 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ }) => {
             How It Works
           </button>
           <button
-          className="text-[#444444] hover:text-gray-600 lg:inline-block"
-          onClick={() => {
-            closeMenu();
-            onScrollToFAQ(); // Call the scroll function to FAQ
-          }}
-        >
-          Support
-        </button>
+            className="text-[#444444] hover:text-gray-600 lg:inline-block"
+            onClick={() => {
+              closeMenu();
+              onScrollToFAQ(); // Call the scroll function to FAQ
+            }}
+          >
+            Support
+          </button>
         </nav>
 
-        <div className="flex flex-col space-y-4 mt-4 px-6 lg:space-y-0 lg:flex-row lg:space-x-4">
+        <div className="flex flex-col items-center space-y-4 mt-4 px-6 lg:space-y-0 lg:flex-row lg:space-x-4">
           <Button
             variant="outlined"
             style={{
@@ -85,7 +94,8 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ }) => {
               borderColor: "#226B51",
             }}
           >
-            Login
+          <Link to="/login">Login</Link>
+            
           </Button>
           <Button
             variant="contained"
@@ -99,13 +109,36 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ }) => {
               fontWeight: "bold",
             }}
           >
-            Signup
+            <Link to="/signup">Signup</Link>
           </Button>
         </div>
 
-        <div className="flex items-center mt-6 px-6 lg:mt-0 lg:space-x-8">
-          <FaGlobe className="w-5 h-5 text-[rgba(68, 68, 68, 1)]" />
-          <span className="text-blue-950">English</span>
+        {/* Language Selector */}
+        <div 
+          className="relative flex items-center justify-center mt-6 px-6 lg:mt-0 lg:space-x-8" 
+          onMouseLeave={() => setShowLanguageMenu(false)} // Hide menu on mouse leave
+        >
+          <div className="flex items-center cursor-pointer" onClick={() => setShowLanguageMenu((prev) => !prev)}>
+            <FaGlobe className="w-5 h-5 text-[rgba(68, 68, 68, 1)]" />
+            <span className="text-blue-950 ml-2">{language}</span>
+          </div>
+
+          {showLanguageMenu && (
+            <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-300 shadow-lg z-50 rounded-lg">
+              <button
+                className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                onClick={() => handleLanguageChange("English")}
+              >
+                English
+              </button>
+              <button
+                className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                onClick={() => handleLanguageChange("Arabic")}
+              >
+                Arabic
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

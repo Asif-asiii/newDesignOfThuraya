@@ -4,8 +4,8 @@ import MainHeading from "./MainHeading";
 
 const ThurayaMainHeading = () => {
   return (
-    <section className="flex overflow-hidden flex-col items-center font-bold max-w-[860px]">
-      <WhyChooseUs text="Why choose us" className="whyChooseUs"/>
+    <section className="flex overflow-hidden flex-col items-center font-bold max-w-[860px] ">
+      <WhyChooseUs text="Why choose us"  />
       <MainHeading text="Instant and secure Thuraya Refills" />
     </section>
   );

@@ -44,9 +44,9 @@ function ThureyaRefills() {
       setIsMobile(window.innerWidth < 768); // Adjust threshold as needed
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -63,9 +63,9 @@ function ThureyaRefills() {
   }, [isMobile]);
 
   return (
-    <main className="flex flex-col px-72 py-32 bg-white max-md:px-5 max-md:py-24">
+    <main className="flex flex-col px-4 md:px-20 lg:px-72 py-10 md:py-24 bg-white">
       <ThurayaMainHeading />
-      <section className="flex flex-col mt-20 w-full text-base tracking-tighter max-md:mt-10 max-md:max-w-full">
+      <section className="flex flex-col mt-10 w-full text-base tracking-tighter">
         {isMobile ? (
           // Carousel for mobile screens
           <div className="overflow-hidden relative">
@@ -77,7 +77,10 @@ function ThureyaRefills() {
               }}
             >
               {features.map((feature, index) => (
-                <div className="flex-shrink-0 w-full flex justify-center" key={index}>
+                <div
+                  className="flex-shrink-0 w-full flex justify-center p-4"
+                  key={index}
+                >
                   <FeatureCard {...feature} />
                 </div>
               ))}
@@ -85,7 +88,7 @@ function ThureyaRefills() {
           </div>
         ) : (
           // Grid layout for larger screens
-          <div className="grid grid-cols-1 md:grid-cols-3  w-full max-md:flex max-md:flex-col gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
             {features.map((feature, index) => (
               <FeatureCard key={index} {...feature} />
             ))}

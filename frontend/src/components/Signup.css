@@ -1,0 +1,204 @@
+.success-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    background: #F3F3F3;
+    padding: 10px;
+}
+
+.success-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+.failure-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+.success {
+    color: #28a745;
+    animation: pulse 1.5s infinite;
+}
+
+.error {
+    color: #dc3545;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.signup-form {
+  width: 60%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #006A4E;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 20px;
+}
+
+
+/* Default styles for bigger screens are already applied in your current CSS */
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+  .success-box {
+    padding: 20px;
+  }
+
+  .success-icon, .failure-icon {
+    font-size: 4rem; /* Reduce icon size on mobile */
+  }
+
+  .MuiTypography-root {
+    font-size: 1rem; /* Adjust text sizes for smaller screens */
+  }
+
+  .MuiTextField-root, .MuiButton-root {
+    width: 100% !important; /* Ensure full width for input fields and buttons */
+  }
+
+  .MuiTextField-root input {
+    height: 40px !important; /* Adjust input height */
+  }
+
+  .MuiButton-root {
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+
+  /* Adjust the form layout on smaller screens */
+  .form-container {
+    flex-direction: column; /* Stack fields vertically on mobile */
+  }
+
+  .name-fields {
+    flex-direction: column; /* Stack first and last name fields vertically */
+  }
+
+  .MuiBox-root {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 601px) and (max-width: 900px) {
+  .signup-form {
+    width: 80%;
+  }
+
+  .success-box {
+    padding: 15px;
+  }
+
+  .success-icon, .failure-icon {
+    font-size: 4.5rem;
+  }
+
+  .MuiTypography-root {
+    font-size: 1.1rem;
+  }
+}
+/* Extra small screens (phones with width < 320px) */
+@media (max-width: 400px) {
+  .success-box {
+    padding: 8px;
+  }
+
+  .success-icon, .failure-icon {
+    font-size: 3rem; /* Further reduce icon size */
+  }
+
+  .MuiTypography-root {
+    font-size: 0.9rem; /* Further adjust text sizes */
+  }
+
+  .MuiTextField-root, .MuiButton-root {
+    width: 100% !important; /* Ensure full width for input fields and buttons */
+  }
+
+  .MuiTextField-root input {
+    height: 35px !important; /* Adjust input height for extra small screens */
+  }
+
+  .MuiButton-root {
+    font-size: 0.7rem; /* Further adjust button font size */
+  }
+
+  .form-container {
+    padding: 8px; /* Adjust padding for very small screens */
+  }
+
+  .name-fields {
+    gap: 8px; /* Adjust gap between fields for very small screens */
+  }
+
+  .MuiBox-root {
+    padding: 5px; /* Further reduce padding */
+  }
+}
