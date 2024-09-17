@@ -1,0 +1,7 @@
+.animation-wrapper {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .animation-wrapper:hover {
+    transform: scale(1.1); /* Scale up the animation slightly on hover */
+  }

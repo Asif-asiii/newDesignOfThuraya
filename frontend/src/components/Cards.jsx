@@ -2,16 +2,18 @@ import React from "react";
 import image from "../assets/card1.png";
 import image2 from "../assets/data.png"; // First image (data)
 import image3 from "../assets/mobile1.png"; // Second image (mobile)
+import { Link } from "react-router-dom";
+import "./Cards.css";
 
 const Cards = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 p-4" id="cards">
-        
+
         {/* Card 1 */}
-        <div className="relative flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md w-full md:max-w-lg p-6 bg-white overflow-hidden" id="card1" style={{height:"250px"}}>
+        <div className="relative flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md w-full md:max-w-lg p-6 bg-white overflow-hidden" id="card1" >
           {/* Container for the images */}
-          <div className="relative bg-gradient-to-r from-[#F4F8FF] to-[#E4EFFF] hover:bg-custom-light-green w-full md:w-1/2 p-6 rounded-lg overflow-hidden transition duration-300">
+          <div className="relative bg-gradient-to-r from-[#F4F8FF] to-[#E4EFFF] hover:bg-custom-light-green w-full md:w-1/2 p-6 rounded-lg overflow-hidden transition duration-300" id="cardImageContainer">
             <div className="relative flex justify-center items-center w-full h-full">
               {/* First Image (Data image) */}
               <img
@@ -42,32 +44,36 @@ const Cards = () => {
 
           {/* Text content on the right */}
           <div className="flex flex-col justify-between w-full md:w-1/2 pl-6 mt-4 md:mt-0">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-900">Quick Refill</h2>
+            <h2 className="text-lg md:text-2xl font-bold text-gray-900">Thuraya Quick Recharge</h2>
             <p className="text-sm md:text-base text-gray-600 my-2">
-              Top up your Thuraya number with ease and convenience.
+            Top up your Thuraya number Instantly and, effortlessly anytime, anywhere
             </p>
-            <button className="text-green-700 hover:text-green-900 font-bold flex items-center gap-2 mt-4 text-sm md:text-base">
-              Start Now <span className="text-lg">→</span>
-            </button>
+            <Link to="quick-refill">
+              <button className="text-green-700 hover:text-green-900 font-bold flex items-center gap-2 mt-4 text-sm md:text-base">
+                Start Now <span className="text-lg">→</span>
+              </button>
+            </Link>
           </div>
         </div>
 
         {/* Card 2 */}
-        <div className="relative flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md w-full md:max-w-lg p-6 bg-white" id="card2" style={{height:"250px"}}>
+        <div className="relative flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md w-full md:max-w-lg p-6 bg-white" id="card2" >
           {/* Image Section */}
-          <div className="flex justify-center items-center w-full md:w-1/2 bg-gradient-to-r from-[#F4F8FF] to-[#E4EFFF] hover:bg-custom-light-green p-6 rounded-lg transition duration-300">
+          <div className="flex justify-center items-center w-full md:w-1/2 bg-gradient-to-r from-[#F4F8FF] to-[#E4EFFF] hover:bg-custom-light-green p-6 rounded-lg transition duration-300" id="cardImageContainer">
             <img src={image} alt="Buy Codes image" className="w-32 h-auto" />
           </div>
 
           {/* Text content on the right */}
           <div className="flex flex-col justify-between w-full md:w-1/2 pl-6 mt-4 md:mt-0">
-            <h2 className="text-lg md:text-2xl font-bold text-gray-900">Buy Codes</h2>
+            <h2 className="text-lg md:text-2xl font-bold text-gray-900">Buy  Thuraya Codes</h2>
             <p className="text-sm md:text-base text-gray-600 my-2">
-              Top up your Thuraya number with ease and convenience.
+              Choose, Purchase and Securely Receive Thuraya Recharge Codes directly to Your Inbox
             </p>
-            <button className="text-green-700 hover:text-green-900 font-bold flex items-center gap-2 mt-4 text-sm md:text-base">
-              Start Now <span className="text-lg">→</span>
-            </button>
+            <Link to="/tabs" state={{ selectedTab: "two" }}>
+              <button className="text-green-700 hover:text-green-900 font-bold flex items-center gap-2 mt-4 text-sm md:text-base">
+                Start Now <span className="text-lg">→</span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

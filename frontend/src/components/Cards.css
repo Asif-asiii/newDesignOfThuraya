@@ -1,0 +1,21 @@
+#cardImageContainer{
+    background: linear-gradient(to right, #F4F8FF 0%, #E4EFFF 100%);
+    transition: background 0.3s ease; /* Smooth transition */}
+#card1:hover #cardImageContainer{
+    background: #D6FFF4;
+}
+
+#card2:hover #cardImageContainer{
+    background: #D6FFF4;
+   
+}
+
+#card1, #card2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #card1:hover, #card2:hover {
+    transform: translateY(-10px) scale(1.01); /* Lifts the card up and scales it */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adds shadow effect */
+    z-index: 10; /* Ensures it appears above other elements */
+  }

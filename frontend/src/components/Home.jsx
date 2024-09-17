@@ -18,7 +18,7 @@ const Home = ({ rechargeRef, faqRef }) => { // Accept rechargeRef as a prop
       </div>
       <HowPurchaseWorks />
       <ThureyaRefills />
-      <div ref={faqRef}><FAQ /></div>
+   
     </div>
   );
 };

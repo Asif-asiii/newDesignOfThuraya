@@ -57,7 +57,7 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ, onLanguageChange }) => {
           <Link
             to="/aboutus"
             className="text-[#444444] hover:text-gray-600 lg:inline-block"
-            onClick={closeMenu}
+            onClick={closeMenu} // Close the menu on click
           >
             About
           </Link>
@@ -70,15 +70,13 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ, onLanguageChange }) => {
           >
             How It Works
           </button>
-          <button
+          <Link
+            to="/support"
             className="text-[#444444] hover:text-gray-600 lg:inline-block"
-            onClick={() => {
-              closeMenu();
-              onScrollToFAQ(); // Call the scroll function to FAQ
-            }}
+            onClick={closeMenu} // Close the menu on click
           >
             Support
-          </button>
+          </Link>
         </nav>
 
         <div className="flex flex-col items-center space-y-4 mt-4 px-6 lg:space-y-0 lg:flex-row lg:space-x-4">
@@ -94,8 +92,12 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ, onLanguageChange }) => {
               borderColor: "#226B51",
             }}
           >
-          <Link to="/login">Login</Link>
-            
+            <Link 
+              to="/login" 
+              onClick={closeMenu} // Close the menu on click
+            >
+              Login
+            </Link>
           </Button>
           <Button
             variant="contained"
@@ -109,7 +111,12 @@ const NavBar = ({ onScrollToRecharge, onScrollToFAQ, onLanguageChange }) => {
               fontWeight: "bold",
             }}
           >
-            <Link to="/signup">Signup</Link>
+            <Link 
+              to="/signup" 
+              onClick={closeMenu} // Close the menu on click
+            >
+              Signup
+            </Link>
           </Button>
         </div>
 

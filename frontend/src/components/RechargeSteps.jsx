@@ -1,6 +1,8 @@
 import React from 'react';
 import StepItem from './StepItem1';
-
+import { Player } from '@lottiefiles/react-lottie-player'; // Import the Lottie player
+import lottieAnimation from "../assets/1.json"; // Your Lottie animation JSON
+import "./RechargeSteps.css"
 const steps = [
   {
     number: '01',
@@ -36,12 +38,10 @@ function HowRechargeWorks() {
     <section className="flex flex-col md:flex-row gap-10 items-center p-4 md:p-10 lg:p-20 lg:ml-[-50px]" id="how-it-works">
       <div className="flex flex-col md:w-2/3 lg:w-3/4 order-2 md:order-1 max-w-md mx-auto">
         <header className="flex flex-col font-bold mb-6">
-          <div className="text-base tracking-tighter leading-none text-teal-800 border border-teal-800 rounded-full px-4 py-2 w-max">
-            Simple steps
-          </div>
           <h2 className="mt-4 text-4xl md:text-5xl tracking-tighter leading-tight text-zinc-900">
-            How recharge works
+            How Thuraya Quick Recharge works?
           </h2>
+          <h4 className='mt-2 text-[#115E59]'>Tap, Pay, Go - It's that easy!</h4>
         </header>
         <div className="flex flex-col space-y-6">
           {steps.map((step, index) => (
@@ -53,13 +53,15 @@ function HowRechargeWorks() {
             />
           ))}
         </div>
+        <p className='mt-2 text-[#115E59]'>You are set! Your Thuraya number will be instantly recharged!</p>
       </div>
-      <div className="w-full md:w-1/3 lg:w-1/4 order-1 md:order-2 flex justify-center" >
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/eed459abd0fdc0be64f6f8daac8acc245ea12d2d3d2649a787902f07fe103b60?placeholderIfAbsent=true&apiKey=9ccd02def6994ae69483e6b250d976b5"
-          alt="Illustration of recharge process"
-          className="w-full h-auto rounded-lg object-contain lg:ml-[-180px]"
+      <div className="w-full md:w-1/3 lg:w-1/4 order-1 md:order-2 flex justify-center cursor-pointer animation-wrapper">
+        <Player
+          autoplay
+          loop
+          src={lottieAnimation}
+          speed={0.5}  // Adjusting the speed to slow down the animation
+          style={{ width: '100%', height: 'auto' }}
         />
       </div>
     </section>

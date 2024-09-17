@@ -1,0 +1,66 @@
+/* General Styling for Success and Failure Box */
+.success-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    background: #F3F3F3;
+    padding: 10px;
+}
+
+.success-icon, .failure-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: #28a745;
+    animation: pulse 1.5s infinite;
+}
+
+.error {
+    color: #dc3545;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 600px) {
+    .MuiTypography-h6 {
+        font-size: 1.2rem; /* Adjust heading font size for mobile */
+    }
+
+    .MuiButton-contained {
+        font-size: 0.9rem; /* Adjust button font size for mobile */
+        padding: 10px;
+    }
+
+    .MuiTextField-root {
+        font-size: 0.9rem; /* Adjust input field font size */
+    }
+
+    .MuiOutlinedInput-root {
+        height: 35px; /* Adjust input field height for mobile */
+        font-size: 0.9rem;
+    }
+
+    .MuiBox-root {
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .MuiBox-root > .MuiBox-root {
+        width: 100%; /* Make form full-width on mobile */
+    }
+
+    /* Button styling adjustments */
+    .MuiButton-root {
+        width: 100%; /* Ensure buttons take full width on mobile */
+        margin-bottom: 10px;
+    }
+
+    /* Adjust margins between elements */
+    .MuiTypography-h7 {
+        margin-bottom: 0.5rem; /* Reduce margin for better spacing */
+    }
+}

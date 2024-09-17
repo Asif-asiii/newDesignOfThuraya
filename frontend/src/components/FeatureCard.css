@@ -1,0 +1,20 @@
+#featureCard{
+    background: linear-gradient(to right, #F4F8FF 0%, #E4EFFF 100%);
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+#featureCard:hover{
+    background: #D6FFF4;
+}
+
+#featureCard {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden; /* Ensures the card doesn't overlap others */
+  }
+  
+  #featureCard:hover {
+    transform: scale(1.01); /* Scales up slightly */
+    background-color: #d6fff3;
+    z-index: 2; /* Ensures it stays above other cards while scaling */
+  }

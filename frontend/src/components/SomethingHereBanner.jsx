@@ -1,12 +1,12 @@
 import React from 'react';
 
-const SignupBanner = () => {
+const SomehtinghereBanner = () => {
   return (
     <section className="overflow-hidden mt-6 max-w-full rounded-2xl bg-gradient-to-r from-custom-blue to-custom-green p-5 mb-[50px]">
       <div className="flex flex-col md:flex-row gap-5">
         <div className="flex flex-col w-full md:w-1/2 lg:ml-[300px] " >
           <h1 className="self-stretch my-auto text-5xl font-bold tracking-tighter leading-none text-zinc-900 text-center md:text-left md:text-6xl max-md:text-4xl">
-            Sign Up
+            Something Here
           </h1>
         </div>
         <div className="flex flex-col w-full md:w-1/2">
@@ -22,4 +22,4 @@ const SignupBanner = () => {
   );
 };
 
-export default SignupBanner;
+export default SomehtinghereBanner;

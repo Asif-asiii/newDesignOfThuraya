@@ -1,0 +1,41 @@
+/* slick-carousel */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+.slick-arrow {
+   
+    background-color: #173567; /* Set the background color to light gray */
+    
+    padding: 5px; /* Add padding (optional) */
+    border-radius: 5px;
+    /* your desired styles for both arrows */
+    color: #FFFFFF; /* Set the color */
+     /* Set the opacity (optional) */
+    position: absolute; /* Position the arrows */
+    top: 50%; /* Center them vertically */
+    transform: translateY(-50%); /* Offset the vertical position */
+    z-index: 1; /* Ensure arrows are above slides */
+    &:hover {
+        color: #FFFFFF; /* Change the color to white on hover */
+        background-color: #173567; /* Set the background color to light gray */
+      }
+  }
+  
+  .slick-prev {
+    left: 0px; /* Position the previous arrow */
+  }
+  
+  .slick-next {
+    right: 0px; /* Position the next arrow */
+  }
+
+
+  .prefix {
+    font-weight: bold;
+    color: black;
+}
+
+.separator {
+    margin: 0 4px; /* Adjust margin as needed */
+}

@@ -5,8 +5,16 @@ import './App.css';
 import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout2 from './components/MainLayout2';
-import Signup from './components/Signup';
-import Login from "./components/Login";
+import ForgotPassword from "./Pages/Forgotpass";
+import Login from "./Pages/Login";
+import Signup from './pages/Signup';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Tabs from "./components/Tabs/Tabs"
+import Support from './components/Support';
+
+
+const stripePromise = loadStripe("your-publishable-key");
 function App() {
   
   const rechargeRef = useRef(null);
@@ -26,6 +34,8 @@ function App() {
   
 
   return (
+    <Elements stripe={stripePromise}>
+
     <Router>
       <div className="App">
         <Navbar onScrollToRecharge={scrollToRecharge} onScrollToFAQ={scrollToFAQ} /> {/* Pass the function as a prop */}
@@ -34,10 +44,17 @@ function App() {
           <Route path='/aboutus' element={<MainLayout2 />} />
           <Route path='/login' element={<Login />} /> 
           <Route path='/signup' element={<Signup/>} />
+          <Route path='/forgot-password' element={<ForgotPassword />}/>
+          <Route path='/quick-refill' element={<Tabs />}/>
+          <Route path='/tabs' element={<Tabs />}/>
+          <Route path='/support' element={<Support />}/>
         </Routes>
         <Footer />
       </div>
     </Router>
+
+    </Elements>
+
   );
 }
 
